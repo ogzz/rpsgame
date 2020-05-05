@@ -1,0 +1,52 @@
+body{
+    background-color: wheat;
+}
+.rock{
+    background: url("rock.png")no-repeat;
+    cursor:pointer;
+    border:transparent;
+    outline:0;
+    width: 300px;
+    height: 300px;
+    margin-left: 12vw;
+    margin-top: 12vw;
+    
+}
+.Paper{
+    background: url("paper.png")no-repeat;
+    cursor:pointer;
+    border:transparent;
+    outline:0;
+    width: 300px;
+    height: 300px;
+    margin-left: 12vw;
+    
+}
+.Scissor{
+    background: url("scissor.png")no-repeat;
+    cursor:pointer;
+    border:transparent;
+    outline:0;
+    width: 300px;
+    height: 300px;
+    margin-left: 12vw;
+    
+}
+button:active{
+    -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+       -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+            box-shadow: inset 0px 0px 5px #c1c1c1;
+     outline: none;
+}
+
+button::-moz-focus-inner {
+    border:0;
+}
+p{
+    font-size: 2vw;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: tomato;
+}

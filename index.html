@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<main>
+
+    <head>
+        <link rel="stylesheet" href=index.css>
+    </head>
+
+    <body>
+        <p id="draw"></p>
+        <script>
+            let hands = ["Rock", "Paper", "Scissor"];
+
+            function getRandomInt(max) {
+                return Math.floor(Math.random() * Math.floor(max));
+            }
+            let compHand;
+            let playerHand;
+
+            function selectPlayerHand(handNumber) {
+                playerHand = hands[handNumber];
+            }
+
+            function randCompHand() {
+                compHand = hands[getRandomInt(3)];
+            }
+
+            function compareHands(playerHand, compHand) {
+
+                if (((hands.indexOf(playerHand.toString()) + 1) % 3) === hands.indexOf(compHand.toString())) {
+                    console.log("computer won")
+                    document.getElementById("draw").innerHTML = "Computer won play again ";
+
+                } else if (hands.indexOf(playerHand.toString()) == hands.indexOf(compHand.toString())) {
+                    document.getElementById("draw").innerHTML = "It's a DRAW play again ";
+                    console.log("***draw")
+                } else {
+                    console.log("you win!!");
+                    document.getElementById("draw").innerHTML = "You won good work! ";
+                }
+
+                console.log((hands.indexOf(compHand.toString())) + " comp value");
+                console.log((hands.indexOf(playerHand.toString())) + " player value");
+
+            }
+
+            function playTheGame() {
+                randCompHand();
+                compareHands(playerHand, compHand);
+
+            }
+        </script>
+
+        <button onclick="selectPlayerHand(0);playTheGame()" class="rock" type="button">
+            <button onclick="selectPlayerHand(1);playTheGame()" class="Paper" type="button">
+                <button onclick="selectPlayerHand(2);playTheGame()" class="Scissor" type="button">
+
+                </button>
+            </button>
+        </button>
+    </body>
+</main>
