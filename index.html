@@ -7,14 +7,20 @@
 
     <body>
         <p id="draw"></p>
+        <p id="win"></p>
+        <p id="lose"></p>
+
         <script>
             let hands = ["Rock", "Paper", "Scissor"];
+            let wins = 0;
+            let loses = 0;
 
             function getRandomInt(max) {
                 return Math.floor(Math.random() * Math.floor(max));
             }
             let compHand;
             let playerHand;
+
 
             function selectPlayerHand(handNumber) {
                 playerHand = hands[handNumber];
@@ -27,15 +33,22 @@
             function compareHands(playerHand, compHand) {
 
                 if (((hands.indexOf(playerHand.toString()) + 1) % 3) === hands.indexOf(compHand.toString())) {
+                    loses++;
                     console.log("computer won")
                     document.getElementById("draw").innerHTML = "Computer won play again ";
+                    document.getElementById("lose").innerHTML = "Loses " + loses + " ";
+
 
                 } else if (hands.indexOf(playerHand.toString()) == hands.indexOf(compHand.toString())) {
                     document.getElementById("draw").innerHTML = "It's a DRAW play again ";
                     console.log("***draw")
                 } else {
+                    wins += 1;
+                    document.getElementById("win").innerHTML = "Wins " + wins;
                     console.log("you win!!");
                     document.getElementById("draw").innerHTML = "You won good work! ";
+
+
                 }
 
                 console.log((hands.indexOf(compHand.toString())) + " comp value");
